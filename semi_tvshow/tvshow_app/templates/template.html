@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <table>
+        <thead>
+            <td>ID</td>
+            <td>Title</td>
+            <td>Network</td>
+            <td>Release Date</td>
+            <td>Description</td>
+            <td>Actions</td>
+        </thead>
+        <tbody>
+            {% for show in shows%}
+            <tr>
+                <td>{{show.id}}</td>
+                <td>{{show.title}}</td>
+                <td>{{show.network}}</td>
+                <td>{{show.releasedate}}</td>
+                <td>{{show.description}}</td>
+                <td>
+                    <a href="{% url 'viewshow' id=show.id %}">Show | </a>
+                
+                    <a href="{% url 'del_show' show.id %}">Delete | </a>
+                    <a href="{% url 'edit_show' show.id %}">Edit | </a>
+            
+            
+            </td>
+
+
+            </tr>
+           
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Add a new Show!</h2>
+    <form class="" action="/editshow/{{id}}" method="post">
+        {% csrf_token %}
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" value="{{title}}">
+
+        <br><br>
+
+        <label for="network">Network</label>
+        <input type="text" name="network" id="network" value="{{network}}" >
+
+        <br><br>
+
+        <label for="releasedate">Release Date</label>
+        <input type="date" name="releasedate" id="releasedate" value="{{releasedate|date:'Y-m-d'}}">
+
+        <br><br>
+
+        <label for="description">Description</label>
+        <textarea name="description" cols="20" rows="3">{{description}}</textarea>
+
+
+        <br><br>
+
+        <input type="submit" value="Update">
+
+    </form>
+</body>
+</html>
